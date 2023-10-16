@@ -24,9 +24,4 @@ export const links = [
     title: "Portfolio",
     url: "/portfolio",
   },
-  {
-    id: 6,
-    title: "Dashboard",
-    url: "/dashboard",
-  },
 ];

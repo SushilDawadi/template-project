@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className=" max-w-screen-xl overflow-hidden m-auto  ">
+      <body className="max-w-7xl min-h-screen m-auto flex flex-col justify-between   ">
         <Navbar />
         {children}
         <Footer />

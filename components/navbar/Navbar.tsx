@@ -1,13 +1,14 @@
 "use client";
-import { useState, Fragment } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { links } from "@/utils";
 import Image from "next/image";
 
+
 const Navbar = () => {
   const [isOpen, setisOpen] = useState(false);
   return (
-    <div className="w-full fixed top-0 left-0 ">
+    <div className="w-full m-auto fixed top-0 left-0  ">
       <div className="md:flex justify-between items-center bg-black py-4 md:px-10 px-7">
         <div className="font-bold text-2xl cursor-pointer flex items-center text-white ">
           Template
@@ -16,10 +17,17 @@ const Navbar = () => {
           <Image
             onClick={() => setisOpen(!isOpen)}
             className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
-            src={isOpen ? "/cross.png" : "/hamburger.svg"}
+            src={isOpen ? "/cross.svg" : "/menu.svg"}
             width={20}
             height={20}
             alt="menu"
+          />
+          <Image
+            className="absolute right-16 top-6 cursor-pointer md:hidden"
+            src="/login.svg"
+            width={20}
+            height={20}
+            alt="login"
           />
         </div>
         <div
@@ -29,13 +37,18 @@ const Navbar = () => {
         >
           {links.map((link) => (
             <Link
-              className="md:ml-8 text-xl my-2 md:my-0 text-white "
+              className="md:ml-8 text-xl my-2 md:my-0 text-white  md:hover:border-b-2  transition-all duration-100 ease-in "
               key={link.id}
               href={link.url}
+              onClick={() => setisOpen(false)}
             >
               {link.title}
             </Link>
           ))}
+
+          <button className="bg-white text-black ml-5 px-4 py-2 rounded-md hidden md:block text-xl my-2 md:my-0 ">
+            Logout
+          </button>
         </div>
       </div>
     </div>
