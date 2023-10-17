@@ -20,7 +20,7 @@ export default function Home() {
           width={900}
           height={900}
           alt="Home Learning"
-          className="object-contain grayscale "
+          className="object-contain    "
         />
       </div>
     </div>

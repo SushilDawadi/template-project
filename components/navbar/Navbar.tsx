@@ -4,7 +4,6 @@ import Link from "next/link";
 import { links } from "@/utils";
 import Image from "next/image";
 
-
 const Navbar = () => {
   const [isOpen, setisOpen] = useState(false);
   return (
@@ -46,7 +45,7 @@ const Navbar = () => {
             </Link>
           ))}
 
-          <button className="bg-white text-black ml-5 px-4 py-2 rounded-md hidden md:block text-xl my-2 md:my-0 ">
+          <button className="bg-white text-black ml-5 px-4 py-[6px] rounded-md hidden md:block text-xl my-2 md:my-0 ">
             Logout
           </button>
         </div>

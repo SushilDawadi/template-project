@@ -9,7 +9,7 @@ const About = () => {
         <Image
           src={groupImg}
           alt="learning-group"
-          className="w-[100%] h-[300px] mt-[77px] relative z-[-2] object-cover grayscale  "
+          className="w-[100%] h-[300px] mt-[77px] relative z-[-2] object-cover   "
         />
         <div className="bg-black p-2 text-white absolute top-[300px] left-1 md:left-[350px] z-[-2]">
           <h2 className="text-2xl font-bold">Digital Storytellers</h2>
@@ -42,7 +42,7 @@ const About = () => {
           </p>
           <li className="m-2 text-2xl list-none">- Creative Illustrations</li>
           <li className="m-2 text-2xl list-none">-Dynamic Website</li>
-          <li className="m-2 text-2xl list-none">
+          <li className="m-2 text-2xl list-none mb-8">
             -Fast and Handy Mobile Apps
           </li>
           <Button url="/contact" text="Contact" />
