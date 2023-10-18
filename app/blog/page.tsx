@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 const Blog = () => {
   return (
-    <div className="mt-[80px] md:mt-[100px] flex flex-col gap-[50px]">
+    <div className="mt-[80px] md:mt-[100px] md:ml-[80px] flex flex-col gap-[50px] md:h-screen   ">
       <Link href="/blog/test">
         <div className="flex flex-col  md:gap-[60px] md:flex-row items-center">
           <div>

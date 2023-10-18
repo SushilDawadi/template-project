@@ -4,8 +4,10 @@ import Link from "next/link";
 import { links } from "@/utils";
 import Image from "next/image";
 import DarkMode from "../DarkMode/DarkMode";
-
+import { useContext } from "react";
+import { ThemeContext } from "@/context/ThemeContext";
 const Navbar = () => {
+  const { mode, toggle } = useContext(ThemeContext);
   const [isOpen, setisOpen] = useState(false);
   return (
     <div className="w-full m-auto fixed top-0 left-0  ">
@@ -18,7 +20,7 @@ const Navbar = () => {
           <Image
             onClick={() => setisOpen(!isOpen)}
             className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
-            src={isOpen ? "/cross.svg" : "/menu.svg"}
+            src={isOpen ? "/x.png" : "/menu.png"}
             width={20}
             height={20}
             alt="menu"
@@ -26,7 +28,7 @@ const Navbar = () => {
 
           <Image
             className="absolute right-16 top-6 cursor-pointer md:hidden"
-            src="/login.svg"
+            src="/logout.png"
             width={20}
             height={20}
             alt="login"
@@ -34,11 +36,11 @@ const Navbar = () => {
         </div>
 
         <div
-          className={`flex flex-col md:flex bg-black md:flex-row md:items-center pb-8 md:pb-0 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
+          className={` bg-black flex flex-col md:flex  md:flex-row md:items-center pb-8 md:pb-0 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
             isOpen ? "top-16" : "top-[-490px]"
           } `}
         >
-          <div className="flex justify-end mr-[17px] items-center ">
+          <div className="flex  ">
             <DarkMode />
           </div>
           {links.map((link) => (

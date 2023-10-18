@@ -1,3 +1,4 @@
+import { ThemeProvider } from "@/context/ThemeContext";
 import { Navbar, Footer } from "@/components";
 import "./globals.css";
 import type { Metadata } from "next";
@@ -14,10 +15,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="max-w-7xl min-h-screen m-auto flex flex-col justify-between   ">
-        <Navbar />
-        {children}
-        <Footer />
+      <body className="max-2xl lg:h-screen  m-auto flex flex-col justify-between    ">
+        <ThemeProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

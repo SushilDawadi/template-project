@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.light {
+  @apply text-black bg-white z-10;
+}
+.dark {
+  @apply bg-black  text-white z-10;
+}
+.theme {
+  transition: 1s all ease;
+}

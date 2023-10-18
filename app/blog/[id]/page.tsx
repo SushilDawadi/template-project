@@ -4,7 +4,7 @@ import React from "react";
 const BlogPost = () => {
   return (
     <>
-      <div className="mt-[90px] ">
+      <div className="mt-[90px] lg:h-screen ">
         <div className="m-5 md:flex md:justify-evenly   ">
           <div className="flex flex-col gap-[15px]">
             <h2 className="text-3xl font-bold ">
