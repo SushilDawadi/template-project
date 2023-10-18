@@ -11,3 +11,6 @@
 .theme {
   transition: 1s all ease;
 }
+::-webkit-scrollbar {
+  display: none;
+}

@@ -10,7 +10,7 @@ const Contact = () => {
       <h1 className="md:relative md:top-[75px] text-5xl font-semibold md:font-bold text-center">
         Lets Keep in Touch
       </h1>
-      <div className="h-[85vh] md:flex md:justify-center md:gap-[40px] md:items-center">
+      <div className=" md:h-[90vh]  md:flex md:justify-center md:gap-[40px] md:items-center">
         <div>
           <Image
             src="/contact.png"

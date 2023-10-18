@@ -19,7 +19,7 @@ const Navbar = () => {
         <div>
           <Image
             onClick={() => setisOpen(!isOpen)}
-            className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
+            className="text-3xl absolute right-8 top-6 cursor-pointer lg:hidden"
             src={isOpen ? "/x.png" : "/menu.png"}
             width={20}
             height={20}
@@ -27,7 +27,7 @@ const Navbar = () => {
           />
 
           <Image
-            className="absolute right-16 top-6 cursor-pointer md:hidden"
+            className="absolute right-16 top-6 cursor-pointer lg:hidden"
             src="/logout.png"
             width={20}
             height={20}
@@ -36,7 +36,7 @@ const Navbar = () => {
         </div>
 
         <div
-          className={` bg-black flex flex-col md:flex  md:flex-row md:items-center pb-8 md:pb-0 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
+          className={` bg-black flex flex-col lg:flex  lg:flex-row lg:items-center pb-8 lg:pb-0 absolute lg:static lg:z-auto z-[-1] left-0 w-full lg:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
             isOpen ? "top-16" : "top-[-490px]"
           } `}
         >

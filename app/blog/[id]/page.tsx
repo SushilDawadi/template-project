@@ -1,24 +1,31 @@
 import Image from "next/image";
 import React from "react";
 
-const BlogPost = () => {
+interface BlogPostProps {
+  params: {
+    id: string;
+  };
+}
+async function getData(id: string) {
+  const response = await fetch(
+    `https://jsonplaceholder.typicode.com/posts/${id}`
+  );
+
+  if (!response.ok) {
+    throw new Error("Something went wrong");
+  }
+
+  return response.json();
+}
+const BlogPost = async ({ params }: BlogPostProps) => {
+  const data = await getData(params.id);
   return (
     <>
       <div className="mt-[90px] lg:h-screen ">
         <div className="m-5 md:flex md:justify-evenly   ">
           <div className="flex flex-col gap-[15px]">
-            <h2 className="text-3xl font-bold ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consectetur magni nam earum.
-            </h2>
-            <p className="text-xl text-justify md:w-[650px]">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet
-              saepe quod nisi neque sapiente ad quia nam accusantium, vitae
-              suscipit consequatur quam magni idsint dolorem reiciendis mollitia
-              repellendus esse tenetur, illum quae rerum maxime. Repellat, atque
-              distinctio quas ea officiis animi reiciendis? Sapiente esse est
-              amet nulla, natus quis.
-            </p>
+            <h2 className="text-3xl font-bold ">{data.title}</h2>
+            <p className="text-xl text-justify md:w-[650px]">{data.body}</p>
             <div className="flex gap-2 items-center m-3">
               <Image
                 src="/profile.png"
@@ -41,23 +48,41 @@ const BlogPost = () => {
         </div>
         <div className="m-5">
           <p className="text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-            ab enim rerum ad beatae? Voluptatem nulla, inventore nobis quia
-            fugiat ab error aut cum qui aliquid incidunt et corrupti temporibus
-            ipsum, tenetur quasi fuga ullam, porro mollitia. Dolor alias
-            repudiandae quo omnis velit eos cum. Maxime facere assumenda hic
-            alias quae in aspernatur aperiam repudiandae laudantium distinctio,
-            sapiente molestiae minus aut soluta animi esse quasi quidem impedit
-            enim officiis odit.lorem60 Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Repellat minus earum autem rerum porro, voluptatum
-            ex totam itaque id vitae quibusdam dignissimos quasi quod similique
-            soluta delectus consequatur provident quae. Lorem, ipsum dolor sit
-            amet consectetur adipisicing elit. Nostrum ut a, minus voluptatem
-            eum voluptatum inventore itaque voluptates ullam magnam, iste at
-            aperiam! Quisquam, labore. Eligendi sunt, assumenda iure molestias
-            officia, hic mollitia impedit iusto excepturi perspiciatis ducimus
-            id doloribus quo totam voluptates maxime nemo libero, doloremque
-            vitae modi repellendus.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis
+            dolorum dolorem voluptatem aspernatur! Maxime nihil beatae
+            recusandae quisquam tenetur a, nobis mollitia molestiae cumque totam
+            eligendi ut soluta esse provident quos perferendis, quo, assumenda
+            itaque exercitationem at culpa doloribus voluptate! Voluptas placeat
+            perspiciatis non veniam inventore dignissimos at laudantium
+            laboriosam vitae unde aut adipisci, repudiandae incidunt. Amet
+            facilis error voluptatem sed rerum autem eos, minima aperiam
+            eligendi architecto fugiat at tempore ipsa cum, et molestiae
+            reprehenderit quisquam a! Provident esse quibusdam vero odio dolor,
+            magnam ipsum totam nobis quis obcaecati veniam architecto eum saepe,
+            recusandae suscipit, eaque officiis enim. Accusantium nostrum quae,
+            architecto quo sint fugit vitae. Dolorem neque fugiat animi est,
+            nisi tenetur ducimus ratione quasi ex cupiditate vero eveniet id
+            volu cum beatae iusto quis est cumque illum quas! Eaque aliquam
+            rerum consequatur quam perferendis tempora veritatis fuga quaerat
+            tempore, soluta voluptatem repudiandae odio est illum exercitationem
+            repellat animi unde corrupti ipsam rem expedita sed iure? Autem ipsa
+            nesciunt repudiandae. Consectetur distinctio minus perspiciatis.
+            Error delectus id inventore libero, placeat earum quisquam animi
+            eveniet dolores doloribus sed laudantium totam natus iste omnis
+            excepturi itaque esse officia voluptatem! Modi cupiditate quam
+            laborum sint atque ducimus excepturi aliquam adipisci, recusandae
+            vitae expedita tempora dolores molestiae voluptatum earum
+            perspiciatis amet quis temporibus? Minima porro debitis numquam
+            aliquid distinctio accusantium esse, cum ab dolores quasi rem quam.
+            Omnis labore quis qui nihil sunt debitis fugiat autem, optio, harum,
+            excepturi nisi enim voluptas distinctio. Dolores, blanditiis quos
+            est tempora earum veniam nobis cupiditate, incidunt minus facere,
+            numquam odio error sed atque aut? Sunt voluptas odit eum earum
+            magnam dignissimos obcaecati. Iusto totam ab vero expedita
+            repellendus ipsam culpa suscipit, dicta non pariatur rerum nostrum
+            reiciendis voluptates vel eligendi, quisquam, quam laborum velit
+            delectus harum accusantium natus voluptas nulla sapiente. Laborum
+            distinctio dolores autem unde neque ex recusandae ducimus!
           </p>
         </div>
       </div>

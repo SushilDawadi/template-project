@@ -4,7 +4,7 @@ import groupImg from "../../public/group.jpg";
 import Button from "@/components/button/Button";
 const About = () => {
   return (
-    <div className="flex md::h-[100vh] flex-col justify-between gap-5  ">
+    <div className="flex  flex-col justify-between gap-5  ">
       <div>
         <Image
           src={groupImg}

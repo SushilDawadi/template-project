@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="max-2xl lg:h-screen  m-auto flex flex-col justify-between    ">
+      <body className="max-2xl h-screen m-auto flex flex-col justify-between    ">
         <ThemeProvider>
           <Navbar />
           {children}
