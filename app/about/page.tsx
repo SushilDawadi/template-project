@@ -2,6 +2,11 @@ import React from "react";
 import Image from "next/image";
 import groupImg from "../../public/group.jpg";
 import Button from "@/components/button/Button";
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Template About Page",
+  description: "About our team and what we do",
+};
 const About = () => {
   return (
     <div className="flex  flex-col justify-between gap-5  ">

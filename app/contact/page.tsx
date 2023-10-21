@@ -3,6 +3,8 @@ import React, { useContext } from "react";
 import Image from "next/image";
 import Button from "@/components/button/Button";
 import { ThemeContext } from "@/context/ThemeContext";
+
+
 const Contact = () => {
   const { mode } = useContext(ThemeContext);
   return (
