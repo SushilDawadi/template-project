@@ -2,7 +2,6 @@ import { ThemeProvider } from "@/context/ThemeContext";
 import { Navbar, Footer } from "@/components";
 import "./globals.css";
 import type { Metadata } from "next";
-import { SessionProvider } from "next-auth/react";
 import AuthProvider from "@/components/AuthProvider/AuthProvider";
 export const metadata: Metadata = {
   title: "Template",

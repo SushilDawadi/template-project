@@ -24,7 +24,7 @@ const Blog = async () => {
             <div>
               <Image src={item.image} width={300} height={300} alt="image" />
             </div>
-            <div className="">
+            <div>
               <h1 className="text-center text-3xl font-bold">{item.title}</h1>
               <p className="mx-4">{item.desc.substring(0, 220)}...</p>
             </div>

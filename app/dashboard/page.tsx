@@ -1,30 +1,26 @@
 "use client";
-import React from "react";
-import { useEffect, useState } from "react";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import React, { useEffect } from "react";
 
 const Dashboard = () => {
-  // const [data, setData] = useState([]);
-  // const [err, setErr] = useState(false);
-  // const [Loading, setLoading] = useState(false);
+  const session = useSession();
 
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     setLoading(true);
-  //     const response = await fetch(
-  //       "https://jsonplaceholder.typicode.com/posts"
-  //     );
+  const router = useRouter();
 
-  //     if (!response.ok) {
-  //       setErr(true);
-  //     }
-  //     setData(await response.json());
-  //     setLoading(false);
-  //   };
-  //   getData();
-  // }, []);
+  useEffect(() => {
+    if (session.status === "unauthenticated") {
+      router.push("/dashboard/login");
+    }
+  }, [router, session.status]);
 
-  // console.log(data);
-  return <div className="h-[100vh]">Dashboard</div>;
+  if (session.status === "loading") {
+    return <p>loading</p>;
+  }
+
+  if (session.status === "authenticated") {
+    return <div className="h-[100vh] mt-[80px] ">Dashboard</div>;
+  }
 };
 
 export default Dashboard;
