@@ -17,7 +17,7 @@ const Blog = async () => {
   const data = await getData();
 
   return (
-    <div className="mt-[80px] md:mt-[100px] md:ml-[80px] flex flex-col gap-[50px]    ">
+    <div className=" h-screen mt-[80px] md:mt-[100px] md:ml-[80px] flex flex-col gap-[50px]    ">
       {data.map((item: any) => (
         <Link key={item._id} href={`/blog/${item._id}`}>
           <div className="flex flex-col  md:gap-[60px] md:flex-row items-center">
