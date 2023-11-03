@@ -4,7 +4,7 @@ import { NextApiRequest } from "next";
 import { NextResponse } from "next/server";
 
 export const GET = async (
-  request: NextApiRequest,
+  request: any,
   { params }: { params: { id: string } }
 ) => {
   const { id } = params;
@@ -20,7 +20,7 @@ export const GET = async (
 };
 
 export const DELETE = async (
-  request: NextApiRequest,
+  request: any,
   { params }: { params: { id: string } }
 ) => {
   const { id } = params;
