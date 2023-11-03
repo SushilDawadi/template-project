@@ -5,6 +5,7 @@ import React, { useEffect } from "react";
 import { ThemeContext } from "@/context/ThemeContext";
 import { useContext } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 const Login = () => {
   const { mode } = useContext(ThemeContext);
   const session = useSession();
@@ -56,7 +57,12 @@ const Login = () => {
         >
           Login
         </button>
-        <button onClick={() => signIn("google")}>Login with Google</button>
+        <button className="underline" onClick={() => signIn("google")}>
+          Login with Google
+        </button>
+        <Link href="/dashboard/register" className="underline">
+          Register?
+        </Link>
       </form>
     </div>
   );

@@ -18,3 +18,16 @@ export const GET = async (
     return new NextResponse("it doesn't Work" + e, { status: 500 });
   }
 };
+
+export const DELETE = async (
+  request: NextApiRequest,
+  { params }: { params: { id: string } }
+) => {
+  const { id } = params;
+  try {
+    await connectDB();
+    await Post.findByIdAndDelete(id);
+    return new NextResponse("Post deleted", { status: 200 });
+  } catch (e) {}
+  return new NextResponse("it doesn't Work", { status: 500 });
+};
