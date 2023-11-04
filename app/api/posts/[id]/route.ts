@@ -1,6 +1,6 @@
 import Post from "@/models/Post";
 import connectDB from "@/utils/db";
-import { NextApiRequest } from "next";
+
 import { NextResponse } from "next/server";
 
 export const GET = async (

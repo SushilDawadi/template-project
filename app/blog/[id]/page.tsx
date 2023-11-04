@@ -7,7 +7,7 @@ interface BlogPostProps {
   };
 }
 async function getData(id: string) {
-  const response = await fetch(`http://localhost:3000/api/posts/${id}`, {
+  const response = await fetch(`http://127.0.0.1:3000/api/posts/${id}`, {
     cache: "no-store",
   });
 
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 }
 const BlogPost = async ({ params }: BlogPostProps) => {
   const data = await getData(params.id);
-  console.log(data);
+
   return (
     <>
       <div className="mt-[90px] lg:h-screen ">
